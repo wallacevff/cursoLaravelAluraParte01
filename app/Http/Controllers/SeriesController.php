@@ -8,7 +8,7 @@ class SeriesController extends Controller
     public function listarSeries(Request $request){
         //echo $request->url();
         //var_dump($request->query());
-        exit();
+        //exit();
         $series = [
             'Grey\'s Anatomy',
             'Lost',
