@@ -14,7 +14,7 @@ class SeriesController extends Controller
             'Lost',
             'Agents of SHIELD'
         ];
-    
+    /*
         $html = "<ul>";
         $html .= "</ul>";
         foreach ($series as $serie){
@@ -22,7 +22,12 @@ class SeriesController extends Controller
             
         }
         $html .= "</ul>";
+
         echo $html;
+        */
+        //return view("series.index", ['series' => $series]);
+
+        return view("series.index", compact('series'));
     }
 }
 
