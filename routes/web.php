@@ -13,3 +13,4 @@
 
 Route::get('/series', 'SeriesController@listarSeries');
 Route::get('/series/create', 'SeriesController@create');
+Route::post('/series/create', 'SeriesController@store');

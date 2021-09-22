@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Serie;
 
 class SeriesController extends Controller
 {
@@ -32,6 +33,14 @@ class SeriesController extends Controller
     public function create()
     {
         return view('series.create');
+    }
+    public function Store(Request $request)
+    {
+        $nome = $request->get('nome');
+        //var_dump($nome);
+        $serie = new Serie();
+        $serie->nome = $nome;
+        $serie->save();
     }
 }
 
