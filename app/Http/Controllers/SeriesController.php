@@ -10,11 +10,8 @@ class SeriesController extends Controller
         //echo $request->url();
         //var_dump($request->query());
         //exit();
-        $series = [
-            'Grey\'s Anatomy',
-            'Lost',
-            'Agents of SHIELD'
-        ];
+        $series = Serie::all();
+        //var_dump($series);
     /*
         $html = "<ul>";
         $html .= "</ul>";
