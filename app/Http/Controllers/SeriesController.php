@@ -39,7 +39,8 @@ class SeriesController extends Controller
 
         $serie = Serie::create($request->all());
        // $serie->save();
-        echo "Série id:   {$serie->id}   criada:   {$serie->nome}";
+        //echo "Série id:   {$serie->id}   criada:   {$serie->nome}";
+        
     }
 }
 
