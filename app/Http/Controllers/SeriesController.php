@@ -9,7 +9,7 @@ class SeriesController extends Controller
         //echo $request->url();
         //var_dump($request->query());
         //exit();
-        $series = Serie::all();
+        $series = Serie::query()->orderBy('nome')->get();
         //var_dump($series);
     /*
         $html = "<ul>";
@@ -40,7 +40,12 @@ class SeriesController extends Controller
         $serie = Serie::create($request->all());
        // $serie->save();
         //echo "Série id:   {$serie->id}   criada:   {$serie->nome}";
+        return redirect('/series');
         
+    }
+
+    public function Delete()
+    {
     }
 }
 
