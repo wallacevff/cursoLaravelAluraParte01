@@ -10,6 +10,7 @@ class SeriesController extends Controller
         //var_dump($request->query());
         //exit();
         $series = Serie::query()->orderBy('nome')->get();
+        $mensagem = $request->session()->get('mensagem');
         //var_dump($series);
     /*
         $html = "<ul>";
@@ -24,7 +25,7 @@ class SeriesController extends Controller
         */
         //return view("series.index", ['series' => $series]);
 
-        return view("series.index", compact('series'));
+        return view("series.index", compact('series', 'mensagem'));
     }
     public function create()
     {
@@ -38,6 +39,9 @@ class SeriesController extends Controller
        // $serie->nome = $nome;
 
         $serie = Serie::create($request->all());
+        $request->session()->flash(
+            'mensagem', "Série {$serie->id} criada com sucesso: {$serie->nome}"
+        );
        // $serie->save();
         //echo "Série id:   {$serie->id}   criada:   {$serie->nome}";
         return redirect('/series');

@@ -5,9 +5,15 @@ Séries
 @endsection
 
 @section('conteudo')
+@if(!empty($mensagem))
+<div class="alert alert-success">
+    {{$mensagem}}
+</div>
+@endif
+
 <a href='/series/create' class="btn btn-dark mb-2">Adicionar</a>
 <table class="table">
-    <thead  class='table-brwon'>
+    <thead class='table-brwon'>
         <tr>
             <th>Nome</th>
             <th></th>
