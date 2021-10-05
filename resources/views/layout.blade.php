@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Controle de Series</title>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/fontawesome-free-5.15.4-web/css/all.css">
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
 </head>
 
 <body>
