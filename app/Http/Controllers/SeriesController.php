@@ -38,6 +38,10 @@ class SeriesController extends Controller
         //$serie = new Serie();
        // $serie->nome = $nome;
 
+       $request->validate([
+           'nome' => 'required|min:2'
+       ]);
+
         $serie = Serie::create($request->all());
         $request->session()->flash(
             'mensagem', "Série {$serie->id} criada com sucesso: {$serie->nome}"
@@ -56,6 +60,12 @@ class SeriesController extends Controller
         );
         Serie::destroy($request->id);
         return redirect()->route('Series-Listar');
+    }
+
+    public function editar(Request $request)
+    {
+        $serie = Serie::findOrFail($request->id);
+        return view("series.editar/{{$serie}}");
     }
 }
 
