@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/series', 'SeriesController@listarSeries');
-Route::get('/series/create', 'SeriesController@create');
-Route::post('/series/create', 'SeriesController@store');
+Route::get('/series', 'SeriesController@listarSeries')->name('Series-Listar');
+Route::get('/series/create', 'SeriesController@create')->name('Series-Adicionar');
+Route::post('/series/create', 'SeriesController@store')->name('Series-Criar');
+//Route::post('/series/remover/{id}', 'SeriesController@destroy');
+Route::delete('/series/{id}', 'SeriesController@destroy')->name('Series-Excluir');

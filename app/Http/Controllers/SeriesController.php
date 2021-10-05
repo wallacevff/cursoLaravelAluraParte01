@@ -44,12 +44,18 @@ class SeriesController extends Controller
         );
        // $serie->save();
         //echo "Série id:   {$serie->id}   criada:   {$serie->nome}";
-        return redirect('/series');
+        return redirect()->route('Series-Listar');
         
     }
 
-    public function Delete()
+    public function destroy(Request $request)
     {
+        $serie = Serie::findOrFail($request->id);
+        $request->session()->flash(
+            'mensagem', "Série {$serie->id} excluída com sucesso: {$serie->nome}"
+        );
+        Serie::destroy($request->id);
+        return redirect()->route('Series-Listar');
     }
 }
 
