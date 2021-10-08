@@ -59,6 +59,15 @@ class SeriesController extends Controller
     public function destroy(Request $request)
     {
         $serie = Serie::findOrFail($request->id);
+        $serie->temporadas->each(function (Temporada $temporada){
+                $temporada->episodios->each(function(Episodio $episodio){
+                        $episodio->delete();
+                    }
+                );
+                $temporada->delete();
+            }
+        );
+        $serie->delete();
         $request->session()->flash(
             'mensagem', "Série {$serie->id} excluída com sucesso: {$serie->nome}"
         );
