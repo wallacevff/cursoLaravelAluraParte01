@@ -18,6 +18,7 @@ Séries
             <th>Nome</th>
             <th></th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +27,7 @@ Séries
         <tr>
             <td>{{$serie->nome}}</td>
             <td><a href='/series/editar/{{$serie->id}}' class='btn btn-secondary'><i class="fas fa-edit"></i></td>
+            <td><a href='/series/{{$serie->id}}/temporadas' class='btn btn-info'><i class="fas fa-external-link-alt"></i></a>
             <td>
                 <form method="post" action="/series/{{$serie->id}}"
                 onsubmit="return confirm('Tem certeza que deseja remover {{addslashes($serie->nome)}}?')">
