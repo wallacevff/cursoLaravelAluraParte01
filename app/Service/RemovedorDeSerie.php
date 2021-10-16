@@ -11,12 +11,12 @@ class RemovedorDeSerie
     {
         $serie = null;
         $serieAux = null;
-        DB::transaction(function () use (&$serieId, &$serie, &$serieAux) {
-            $serie = Serie::findOrFail($serieId);
-            $serieAux = $serie;
-            $this->removerTemporadas($serie);
-            $serie->delete();
-        });
+        DB::beginTransaction();
+        $serie = Serie::findOrFail($serieId);
+        $serieAux = $serie;
+        $this->removerTemporadas($serie);
+        $serie->delete();
+        DB::commit();
         return $serieAux;
     }
 

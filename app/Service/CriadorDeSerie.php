@@ -16,11 +16,10 @@ class CriadorDeSerie
         int $epPorTemporada
     ): Serie {
 
-        $serie = null;
-        DB::transaction(function () use (&$serie, $nomeSerie, $qtdTemporadas, $epPorTemporada) {
-            $serie = Serie::create(['nome' => $nomeSerie]);
-            $this->createTemporadas($qtdTemporadas, $epPorTemporada, $serie);
-        });
+        DB::beginTransaction();
+        $serie = Serie::create(['nome' => $nomeSerie]);
+        $this->createTemporadas($qtdTemporadas, $epPorTemporada, $serie);
+        DB::commit();
         return $serie;
     }
 
