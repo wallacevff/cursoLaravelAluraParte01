@@ -66,10 +66,12 @@ class SeriesController extends Controller
         return redirect()->route('Series-Listar');
     }
 
-    public function editar(Request $request)
+    public function editaNome(int $id, Request $request)
     {
-        $serie = Serie::findOrFail($request->id);
-        return view("series.editar/{{$serie}}");
+        $novoNome = $request->nome;
+        $serie = Serie::find($id);
+        $serie->nome = $novoNome;
+        $serie->save();
     }
 }
 

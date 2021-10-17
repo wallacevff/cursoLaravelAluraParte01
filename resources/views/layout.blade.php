@@ -9,6 +9,7 @@
     <title>Controle de Series</title>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/fontawesome/css/all.css">
+    <script src='/js/functions.js'></script>
 </head>
 
 <body>
