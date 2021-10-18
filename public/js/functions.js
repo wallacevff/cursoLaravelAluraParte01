@@ -28,5 +28,9 @@ function editarSerie(serieId) {
         document.getElementById(`nome-serie-${serieId}`).textContent = nome;
     });
 
+}
+function salvaEp() {
+    const formulario = document
+        .getElementById('epAssistido');
 
 }
