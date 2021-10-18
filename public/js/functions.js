@@ -29,8 +29,19 @@ function editarSerie(serieId) {
     });
 
 }
-function salvaEp() {
-    const formulario = document
-        .getElementById('epAssistido');
 
+function salvaEp(episodioId, temporadaId) {
+    /*const formulario = document
+        .getElementById(`epAssistido-${episodioId}`); */
+    let formData = new FormData();
+    const token = document.querySelector('input[name=_token]').value;
+    formData.append("episodioId", episodioId);
+    formData.append("_token", token);
+
+    const url = `/temporadas/${temporadaId}/episodios/assistir/${episodioId}`;
+    //  alert(episodioId);
+    fetch(url, {
+        body: formData,
+        method: "POST"
+    });
 }
