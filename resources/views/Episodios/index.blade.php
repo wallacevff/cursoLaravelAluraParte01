@@ -35,4 +35,7 @@ Episodios da temporada {{$temporada->numero}} da série {{$serie->nome}}
 
 
 
+
+
+
 @endsection
