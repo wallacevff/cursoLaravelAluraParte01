@@ -6,7 +6,8 @@
         {
             "label": "Artisan Serve",
             "type": "shell",
-            "command": "php artisan serve"
+            "command": "php artisan serve",
+            "problemMatcher": []
         }
     ]
 }

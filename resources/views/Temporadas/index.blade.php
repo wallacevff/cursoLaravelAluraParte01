@@ -11,9 +11,9 @@ Temporadas de {{$serie->nome}}
         <a href="/temporadas/{{ $temporada->id }}/episodios">Temporada {{$temporada->numero}}
         </a>
         <span class="badge badge-secondary">
-           0 / {{ $temporada->episodios->count() }}
+            {{$temporada->getEpisodiosAssistidos()->count()}} / {{ $temporada->episodios->count() }}
         </span>
     </li>
     @endforeach
 </ul>
-    @endsection
+@endsection
