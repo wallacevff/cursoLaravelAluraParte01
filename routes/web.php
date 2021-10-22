@@ -26,3 +26,6 @@ Route::post('/temporadas/{temporada}/episodios/assistir/{episodioId}', 'Episodio
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/entrar', 'EntrarController@index');
+Route::post('/entrar', 'EntrarController@entrar');
