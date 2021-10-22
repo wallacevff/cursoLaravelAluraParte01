@@ -7,7 +7,7 @@ Episodios da temporada {{$temporada->numero}} da série {{$serie->nome}}
 @section('conteudo')
 @includeWhen(!empty($mensagem), 'mensagem', ['mensagem'=>$mensagem])
 
-<!--
+
 <ul class='list-group'>
     @foreach($episodios as $episodio)
     <li class='list-group-item d-flex f justify-content-between align-items-center'>
@@ -17,7 +17,7 @@ Episodios da temporada {{$temporada->numero}} da série {{$serie->nome}}
     </li>
     @endforeach
 </ul>
--->
+<!--
 <form action="/temporadas/{{$temporada->id}}/episodios/assistir/" method='post' id='epAssistido'>
     @csrf
     <ul class='list-group'>
@@ -31,10 +31,7 @@ Episodios da temporada {{$temporada->numero}} da série {{$serie->nome}}
     </ul>
     <button class="btn btn-pink mt-2 mb-2">Salvar</button>
 </form>
-
-
-
-
+-->
 
 
 
