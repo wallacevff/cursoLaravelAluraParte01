@@ -5,6 +5,7 @@ Entrar
 @endsection
 
 @section('conteudo')
+@include('erros', ['errors' => $errors])
 
 <form method="post">
     @csrf

@@ -5,24 +5,15 @@
  @endsection
 
  @section('conteudo')
- @if ($errors->any())
- <div class="alert alert-danger">
-     <ul>
-         @foreach ($errors->all() as $error)
-         <li>{{ $error }}
-         </li>
-         @endforeach
-     </ul>
- </div>
- @endif
 
+ @include('erros', ['errors' => $errors])
  <form class="form-group" method='post'>
      @csrf
      <div class='row mb-2'>
          <div class="col col-8">
              <b><label for="nome" class='control-label'>Nome da Série</label></b>
              <input id="serie" class="form-control" type="text" name="nome">
-             
+
          </div>
          <div class="col col-2">
              <b><label for="qtd_temporadas" class='control-label'>Nro. de temporadas</label></b>
@@ -34,6 +25,6 @@
          </div>
      </div>
      <button type='submit' class='btn btn-primary'>Adicionar Série</button>
-     
+
  </form>
  @endsection

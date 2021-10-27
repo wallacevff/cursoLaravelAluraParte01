@@ -15,10 +15,10 @@ class EntrarController extends Controller
     public function entrar(Request $request)
     {
         if (!(Auth::attempt($request->only(['email', 'password'])))) {
-            return->redirect()
-            ->back()
-            ->withErrors('Usuário e/ou senha incoorretos');
+            return redirect()
+                ->back()
+                ->withErrors('Usuário e/ou senha incoorretos');
         }
-       // Auth::attempt($request->only(['email', 'password']));
+        // Auth::attempt($request->only(['email', 'password']));
     }
 }
