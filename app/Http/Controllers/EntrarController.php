@@ -20,5 +20,6 @@ class EntrarController extends Controller
                 ->withErrors('Usuário e/ou senha incoorretos');
         }
         // Auth::attempt($request->only(['email', 'password']));
+        return redirect()->route('Series');
     }
 }
