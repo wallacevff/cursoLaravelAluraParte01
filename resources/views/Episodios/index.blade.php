@@ -12,7 +12,12 @@ Episodios da temporada {{$temporada->numero}} da série {{$serie->nome}}
     @foreach($episodios as $episodio)
     <li class='list-group-item d-flex f justify-content-between align-items-center'>
         Episódio {{$episodio->numero}}
+        @auth
         <input type="checkbox" onclick="salvaEp({{$episodio->id}}, {{$episodio->temporada_id}})" name="assistido-{{$episodio->id}}" <?= $episodio->assistido == true ? "checked" : "" ?>>
+        @endauth
+        @guest
+        <?= $episodio->assistido == true ? "<i class=\"fas fa-check\"></i>" : "<i class=\"far fa-square\"></i>" ?>
+        @endguest
         @csrf
     </li>
     @endforeach

@@ -10,17 +10,18 @@ use Illuminate\Support\Facades\Auth;
 
 class SeriesController extends Controller
 {
+    /*
     public function __construct()
     {
         $this->middleware('auth');
     }
-
+*/
     public function listarSeries(Request $request)
-    {
+    { /*
         if (!Auth::check()) {
             echo "Não autenticado";
             exit();
-        }
+        }*/
         //echo $request->url();
         //var_dump($request->query());
         //exit();
@@ -32,7 +33,7 @@ class SeriesController extends Controller
         $html .= "</ul>";
         foreach ($series as $serie){
             $html .= "<li>" . $serie . "</li>";
-            
+
         }
         $html .= "</ul>";
 

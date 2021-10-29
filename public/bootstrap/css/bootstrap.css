@@ -10470,6 +10470,10 @@ button.bg-dark:focus {
     color: #007bff !important;
 }
 
+.text-brown {
+    color: #500707f6 !important;
+}
+
 a.text-primary:hover,
 a.text-primary:focus {
     color: #0056b3 !important;
